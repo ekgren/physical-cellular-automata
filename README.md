@@ -4,5 +4,6 @@
 ## Colabs
 
 ## Introduction
+![Styledream_thumb](assets/kernels.png)  
 
 ## References
