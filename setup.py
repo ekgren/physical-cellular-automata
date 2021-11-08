@@ -2,7 +2,7 @@
 
 from setuptools import setup, find_packages
 
-setup(name='physical-cellular-automata',
+setup(name='phyca',
       version='0.0.1',
       description='Physical Cellular Automata',
       author='Ariel Ekgren',
