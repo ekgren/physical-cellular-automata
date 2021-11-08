@@ -1,14 +1,13 @@
-#!/usr/bin/env python
+from distutils.core import setup
 
-from setuptools import setup, find_packages
-
-setup(name='phyca',
-      version='0.0.1',
-      description='Physical Cellular Automata',
-      author='Ariel Ekgren',
-      author_email='',
-      url='https://github.com/ekgren/physical-cellular-automata',
-      install_requires=[],
-      packages=find_packages(),
-      entry_points={}
-      )
+setup(
+    name='phyca',
+    version='0.0.1',
+    description='Physical Cellular Automata',
+    packages=['phyca'],
+    url='https://github.com/ekgren/physical-cellular-automata',
+    license='',
+    author='Ariel Ekgren',
+    author_email='',
+    description=''
+)
