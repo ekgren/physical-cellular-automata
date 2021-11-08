@@ -1,1 +1,8 @@
-# physical-cellular-automata
+# Physical Cellular Automata
+###### Note that this is a work in progress and will change or freeze in time in it's current state.
+
+## Colabs
+
+## Introduction
+
+## References
