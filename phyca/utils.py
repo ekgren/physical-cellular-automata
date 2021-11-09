@@ -35,3 +35,44 @@ def make_kernel(x_mul=1.0, y_mul=1.0, pow=1.0, swap=False, device="cuda"):
     else:
         kernel = torch.stack([grid_y, grid_x], dim=0).reshape(2, 1, 3, 3)
     return kernel.to(device)
+
+
+def make_directions(device="cuda"):
+    sq2 = 2 ** -0.5
+    directions = torch.tensor(
+        [
+            [sq2, sq2],
+            [0.0, 1.0],
+            [-sq2, sq2],
+            [1.0, 0.0],
+            [0.0, 0.0],
+            [-1.0, 0.0],
+            [sq2, -sq2],
+            [0.0, -1.0],
+            [-sq2, -sq2],
+        ],
+        requires_grad=False,
+        device=device,
+    )
+    return directions
+
+
+def make_moves(device="cuda"):
+    moves = torch.tensor(
+        [
+            [
+                [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 1.0]],
+                [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 1.0, 0.0]],
+                [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [1.0, 0.0, 0.0]],
+                [[0.0, 0.0, 0.0], [0.0, 0.0, 1.0], [0.0, 0.0, 0.0]],
+                [[0.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 0.0]],
+                [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [0.0, 0.0, 0.0]],
+                [[0.0, 0.0, 1.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]],
+                [[0.0, 1.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]],
+                [[1.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]],
+            ]
+        ],
+        requires_grad=False,
+        device=device,
+    )
+    return moves
