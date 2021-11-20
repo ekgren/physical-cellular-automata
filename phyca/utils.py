@@ -1,9 +1,11 @@
 import torch
 
 
-def conv_pad(input: torch.Tensor, weight: torch.Tensor, padding=1) -> torch.Tensor:
+def conv_pad(
+    input: torch.Tensor, weight: torch.Tensor, padding: int = 1
+) -> torch.Tensor:
     input = torch.nn.functional.pad(
-        input, (padding, padding, padding, padding), "circular"
+        input, [padding, padding, padding, padding], "circular"
     )
     input = torch.nn.functional.conv2d(
         input, weight, bias=None, stride=1, padding=0, dilation=1, groups=1
